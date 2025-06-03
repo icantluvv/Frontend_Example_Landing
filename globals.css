@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+body {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+span,
+input {
+  font-family: var(--font-inter), sans-serif;
+}
+
+p,
+li,
+a {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+@theme {
+  --color-branGreen: #def24a;
+  --color-GreebActive: #c5e000;
+  --color-darkBlue: #475467;
+  --color-lightGray: #e6e4eb;
+  --color-WhiteText: #f8f8f8;
+  --color-Purple: #bdb4ff;
+  --color-PrimaryBlack: #0c0c0c;
+  --color-BrandDarkBlue: #011627;
+}
+
+:root {
+  /* --background: #ffffff; */
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari и Opera */
+  }
+
+  .bg-gradient-custom {
+    background-color: #c3ff99;
+    background-image: radial-gradient(
+        at 68% 85%,
+        hsla(219, 64%, 71%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 1% 3%, hsla(216, 16%, 34%, 0.33) 0px, transparent 50%),
+      radial-gradient(at 79% 23%, hsla(166, 69%, 67%, 1) 0px, transparent 50%),
+      radial-gradient(at 3% 59%, hsla(108, 94%, 71%, 0.53) 0px, transparent 50%),
+      radial-gradient(at 90% 88%, hsla(108, 69%, 69%, 1) 0px, transparent 50%),
+      radial-gradient(at 26% 89%, hsla(181, 70%, 73%, 1) 0px, transparent 50%),
+      radial-gradient(at 31% 39%, hsla(182, 65%, 63%, 1) 0px, transparent 50%);
+
+    background-size: 200% 200%;
+    animation: moveBG 10s ease-in-out infinite alternate;
+  }
+
+  .move-slow {
+    animation: move-slow 25s ease-in-out infinite;
+  }
+
+  .move-medium {
+    animation: move-medium 7s ease-in-out infinite;
+  }
+
+  .move-fast {
+    animation: move-fast 5s ease-in-out infinite;
+  }
+
+  @keyframes move-slow {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-500px, 600px);
+    }
+  }
+
+  @keyframes move-medium {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(800px, 600px);
+    }
+  }
+
+  @keyframes move-fast {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(40px, 0);
+    }
+    50% {
+      transform: translate(40px, 40px);
+    }
+    75% {
+      transform: translate(0, 40px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes moveBG {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 50% 50%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
+}
