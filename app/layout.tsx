@@ -13,8 +13,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ru" className={`${inter.variable} ${montserrat.variable}`}>
-      <body>{children}</body>
+    <html lang="ru" className={`${inter.variable} ${montserrat.variable} `}>
+      <meta name="theme-color" content="#ffffff" />
+      <body className="bg-white">{children}</body>
     </html>
   )
 }
