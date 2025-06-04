@@ -2,6 +2,7 @@ import Image from "next/image"
 import dark_arrow from "@/public/dark_arrow.svg"
 import goals from "@/public/first/GOALS.svg"
 import screen from "@/public/first/screen.png"
+import Link from "next/link"
 
 const FirstSection = () => {
   return (
@@ -47,22 +48,22 @@ const FirstSection = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-4">
-          <a
+          <Link
             href="#connect"
             className="p-[18px] rounded-[48px] flex items-center justify-center gap-x-[10px] 
             font-semibold cursor-pointer text-white bg-darkBlue
           active:bg-darkBlue/75 transition-colors"
           >
-            <span>Подключить</span>
-          </a>
-          <a
+           Подключить
+          </Link>
+          <Link
             href="#forbusiness"
             className="p-[18px] rounded-[48px] flex gap-x-[12px] bg-white text-darkBlue font-semibold cursor-pointer
           active:bg-white/75 transition-colors"
           >
-            <span>Как это работает?</span>
+            Как это работает?
             <Image width={24} height={24} src={dark_arrow} alt="arrow"></Image>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
